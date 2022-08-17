@@ -11,13 +11,16 @@ export class PersonTreeComponent implements OnInit {
     this.loadPersonsTree();
   }
   @Input() nodes: any;
+  isLoading: boolean | any = undefined;
 
   ngOnInit(): void {}
 
   //Get the tree data and assign to the nodes variable
   loadPersonsTree() {
+    this.isLoading = true;
     this.personService.getPersonsTreeRoot().subscribe((data) => {
       this.nodes = data;
+      this.isLoading = false;
     });
   }
 }

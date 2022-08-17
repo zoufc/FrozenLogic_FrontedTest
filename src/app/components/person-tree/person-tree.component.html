@@ -3,4 +3,5 @@
   <button class="addNodeBtn" [routerLink]="['/create', '']">Add a node</button>
 </div>
 <br />
+<p class="isLoading" *ngIf="isLoading">LOADING...</p>
 <app-person-children [nodes]="nodes"></app-person-children>
