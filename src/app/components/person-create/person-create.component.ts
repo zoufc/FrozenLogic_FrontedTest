@@ -45,8 +45,6 @@ export class PersonCreateComponent implements OnInit {
     if (createObj.parent.trim() == '') {
       Reflect.deleteProperty(createObj, 'parent');
     }
-    console.log(createObj);
-
     //If all is OK, it will create the node using the PersonService and return to the tree-view page
     this.personService.addNode(createObj).subscribe(() => {
       alert('Node created successfully!');
