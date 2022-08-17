@@ -1,0 +1,23 @@
+<div class="editForm">
+  <form [formGroup]="editForm" (ngSubmit)="onSubmitEditNodeForm()">
+    <h1>Node edition for Person with id={{ actualNodeValue?.id }}</h1>
+    <input
+      type="text"
+      name="parentId"
+      id="parentIdInput"
+      placeholder="parent id"
+      formControlName="parent"
+    />
+    <br />
+    <input
+      type="text"
+      name="nodeName"
+      id="nodeNameInput"
+      placeholder="node name"
+      formControlName="name"
+      [ngModel]="actualNodeValue?.name"
+    />
+    <br />
+    <button type="submit" id="editBtn">Edit node</button>
+  </form>
+</div>

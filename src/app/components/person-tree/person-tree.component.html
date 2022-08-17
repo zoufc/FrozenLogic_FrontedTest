@@ -1,0 +1,6 @@
+<div class="emptyNodeArrayView" *ngIf="nodes?.length == 0">
+  <p>The Tree is currently empty.</p>
+  <button class="addNodeBtn" [routerLink]="['/create', '']">Add a node</button>
+</div>
+<br />
+<app-person-children [nodes]="nodes"></app-person-children>

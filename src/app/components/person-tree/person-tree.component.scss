@@ -1,0 +1,54 @@
+.nodeRow,
+li {
+  text-decoration: none;
+  background-color: rgb(55, 55, 77);
+  margin: 10px;
+  margin-left: 50;
+  margin-right: 50;
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  border: 2px black solid;
+  border-radius: 10px;
+  list-style: none;
+}
+.btn {
+  float: right;
+  margin: 3px;
+}
+.deleteBtn {
+  background-color: red;
+}
+.editBtn {
+  background-color: blue;
+}
+.addBtn {
+  background-color: green;
+}
+.children {
+  background-color: grey;
+  margin-left: 30px;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.emptyNodeArrayView {
+  text-align: center;
+  border: 1px solid green;
+  box-shadow: 0px 0px 5px 0px;
+  border-radius: 20px;
+  margin: 20px;
+  height: 50vh;
+  padding: 50px;
+}
+.addNodeBtn {
+  width: 50%;
+  height: 50%;
+  font-size: 50px;
+  border: none;
+  background-color: rgb(123, 192, 123);
+  cursor: pointer;
+}
+p {
+  font-size: 20px;
+}

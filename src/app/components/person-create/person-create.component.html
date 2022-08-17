@@ -1,0 +1,23 @@
+<div class="createForm">
+  <form [formGroup]="createNodeForm" (ngSubmit)="onSubmitCreateNodeForm()">
+    <h1>Node creation</h1>
+
+    <input
+      type="text"
+      name="parent"
+      id="parentIdInput"
+      formControlName="parent"
+      [ngModel]="parentId"
+    />
+    <br />
+    <input
+      type="text"
+      name="name"
+      id="nodeNameInput"
+      placeholder="node name"
+      formControlName="name"
+    />
+    <br />
+    <button type="submit" id="createBtn">Create</button>
+  </form>
+</div>

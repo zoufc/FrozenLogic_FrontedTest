@@ -1,0 +1,55 @@
+<ul>
+  <li class="nodeRow" *ngFor="let node of nodes">
+    {{ node.name }} (id={{ node.id }})
+    <span *ngIf="node.children.length > 0"
+      >(children={{ node.children.length }})</span
+    >
+    <span *ngIf="node.children.length !== 0">
+      <button *ngIf="!node.expand" (click)="expandNode(nodes, node.id)">
+        Unwrap
+      </button>
+      <button *ngIf="node.expand" (click)="expandNode(nodes, node.id)">
+        Wrap
+      </button>
+    </span>
+    <button class="btn deleteBtn" (click)="deleteNodeInDB(node.id)">
+      Delete
+    </button>
+    <button class="btn editBtn" [routerLink]="['/edit', node.id]">Edit</button>
+    <button class="btn addBtn" [routerLink]="['/create', node.id]">Add</button>
+    <ul class="children" *ngIf="node.children && node.expand">
+      <li *ngFor="let child of node.children">
+        {{ child.name }} (id={{ child.id }})
+        <span *ngIf="child.children.length > 0"
+          >(children={{ child.children.length }})</span
+        >
+        <span *ngIf="child.children.length !== 0">
+          <button
+            *ngIf="!child.expand"
+            (click)="expandNode(node.children, child.id)"
+          >
+            Unwrap
+          </button>
+          <button
+            *ngIf="child.expand"
+            (click)="expandNode(node.children, child.id)"
+          >
+            Wrap
+          </button>
+        </span>
+        <button class="btn deleteBtn" (click)="deleteNodeInDB(child.id)">
+          Delete
+        </button>
+        <button class="btn editBtn" [routerLink]="['/edit', child.id]">
+          Edit
+        </button>
+        <button class="btn addBtn" [routerLink]="['/create', child.id]">
+          Add
+        </button>
+        <div *ngIf="child.children && child.expand">
+          <app-person-children [nodes]="child.children"></app-person-children>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
