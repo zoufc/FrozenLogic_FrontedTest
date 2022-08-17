@@ -2,6 +2,23 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
 
+It's a web application simulating a tree view feature.
+In a tree there can be several nodes with always a root.
+
+- In this application each node can have a name and a parent.
+- The root node cannot have a parent. Otherwise the tree will die.
+- Each node can be edited and deleted.
+- Each node can have children.
+  ...
+
+# Usage note
+
+1- Create the first node(root)
+
+2- Enjoy your app
+
+...
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
