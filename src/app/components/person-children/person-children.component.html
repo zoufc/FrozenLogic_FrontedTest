@@ -5,10 +5,18 @@
       >(children={{ node.children.length }})</span
     >
     <span *ngIf="node.children.length !== 0">
-      <button *ngIf="!node.expand" (click)="expandNode(nodes, node.id)">
+      <button
+        class="wrappingBtn"
+        *ngIf="!node.expand"
+        (click)="expandNode(nodes, node.id)"
+      >
         Unwrap
       </button>
-      <button *ngIf="node.expand" (click)="expandNode(nodes, node.id)">
+      <button
+        class="wrappingBtn"
+        *ngIf="node.expand"
+        (click)="expandNode(nodes, node.id)"
+      >
         Wrap
       </button>
     </span>
@@ -25,12 +33,14 @@
         >
         <span *ngIf="child.children.length !== 0">
           <button
+            class="wrappingBtn"
             *ngIf="!child.expand"
             (click)="expandNode(node.children, child.id)"
           >
             Unwrap
           </button>
           <button
+            class="wrappingBtn"
             *ngIf="child.expand"
             (click)="expandNode(node.children, child.id)"
           >
