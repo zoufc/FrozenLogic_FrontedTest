@@ -43,10 +43,16 @@ export class PersonEditComponent implements OnInit {
     }
     this.isUpdating = true;
     //Update the node and return to the tree-view page
-    this.personService.updateNode(this.nodeId, body).subscribe(() => {
-      this.isUpdating = false;
-      alert('Node updated successfully!');
-      this.router.navigate(['/person-tree']);
+    this.personService.updateNode(this.nodeId, body).subscribe({
+      next: (v) => console.log(v),
+      error: () => {
+        this.isUpdating = false;
+      },
+      complete: () => {
+        this.isUpdating = false;
+        alert('Node updated successfully!');
+        this.router.navigate(['/person-tree']);
+      },
     });
   }
 }
