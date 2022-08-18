@@ -18,6 +18,7 @@
       formControlName="name"
     />
     <br />
-    <button type="submit" id="createBtn">Create</button>
+    <button *ngIf="!isCreating" type="submit" id="createBtn">Create</button>
+    <p *ngIf="isCreating">Creating...</p>
   </form>
 </div>

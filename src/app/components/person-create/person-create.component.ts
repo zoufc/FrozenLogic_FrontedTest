@@ -16,6 +16,7 @@ import { PersonService } from 'src/app/services/person.service';
 export class PersonCreateComponent implements OnInit {
   createNodeForm: FormGroup | any;
   parentId: number | any;
+  isCreating: boolean | undefined;
   constructor(
     private personService: PersonService,
     private router: Router,
@@ -41,12 +42,14 @@ export class PersonCreateComponent implements OnInit {
       alert('Fields required!');
       return;
     }
+    this.isCreating = true;
     let createObj = { ...node.value, ...{ parent: this.parentId } };
     if (createObj.parent.trim() == '') {
       Reflect.deleteProperty(createObj, 'parent');
     }
     //If all is OK, it will create the node using the PersonService and return to the tree-view page
     this.personService.addNode(createObj).subscribe(() => {
+      this.isCreating = false;
       alert('Node created successfully!');
       this.router.navigate(['/person-tree']);
     });

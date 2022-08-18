@@ -1,6 +1,11 @@
 <div class="editForm">
   <form [formGroup]="editForm" (ngSubmit)="onSubmitEditNodeForm()">
     <h1>Node edition for Person with id={{ actualNodeValue?.id }}</h1>
+    <small
+      ><span id="noticeTitle">NOTICE: </span>If this node is the main root,
+      changing its parentId will destroy the actuel tree.</small
+    >
+    <br />
     <input
       type="text"
       name="parentId"
@@ -18,6 +23,7 @@
       [ngModel]="actualNodeValue?.name"
     />
     <br />
-    <button type="submit" id="editBtn">Edit node</button>
+    <button *ngIf="!isUpdating" type="submit" id="editBtn">Edit node</button>
+    <p *ngIf="isUpdating">Updating...</p>
   </form>
 </div>

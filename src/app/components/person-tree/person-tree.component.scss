@@ -47,7 +47,15 @@ li {
   font-size: 50px;
   border: none;
   background-color: rgb(123, 192, 123);
+  border-radius: 5px;
+  color: white;
   cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: rgb(123, 192, 123);
+    border: 1px solid rgb(123, 192, 123);
+    border-radius: 5px;
+  }
 }
 p {
   font-size: 20px;
